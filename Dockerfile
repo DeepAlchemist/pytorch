@@ -22,6 +22,6 @@ RUN apt-get update && apt-get install -y libgl1-mesa-glx libpci-dev curl nano ps
 
 RUN conda install -y faiss-gpu scikit-learn pandas flake8 yapf isort==4.3.21 yacs gdown future libgcc -c conda-forge
 
-RUN  apt-get --fix-broken install -y && pip uninstall scipy -y && pip install opencv-python tb-nightly matplotlib pyro-ppl logger_tt tabulate tqdm wheel mccabe scipy
+RUN  apt-get --fix-broken install -y && pip install opencv-python tb-nightly matplotlib pyro-ppl==1.8.0 logger_tt tabulate tqdm wheel mccabe scipy
 
 COPY --from=builder /Times-New-Roman/* /opt/conda/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/
