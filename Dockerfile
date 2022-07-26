@@ -8,4 +8,4 @@ RUN conda install -y faiss-gpu scikit-learn pandas flake8 yapf isort==4.3.21 yac
 
 RUN  apt-get --fix-broken install -y && pip install opencv-python tb-nightly matplotlib pyro-ppl==1.8.0 logger_tt tabulate tqdm wheel mccabe scipy
 
-COPY ./time*.ttf /opt/conda/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/
+COPY ./fonts/* /opt/conda/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/
