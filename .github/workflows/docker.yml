@@ -22,4 +22,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ github.repository }}:${{ env.RELEASE_VERSION }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/pytorch:${{ env.RELEASE_VERSION }}
