@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y libgl1-mesa-glx libpci-dev curl nano ps
 
 # CONDA
 RUN conda create -n rice python=3 -y
-RUN source /opt/conda/etc/profile.d/conda.sh
+#RUN source /opt/conda/etc/profile.d/conda.sh
 RUN conda activate rice
 RUN conda install -y faiss-gpu scikit-learn pandas flake8 yapf isort==4.3.21 yacs gdown future libgcc -c conda-forge
 
