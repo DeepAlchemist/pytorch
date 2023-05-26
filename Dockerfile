@@ -5,10 +5,10 @@ FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-devel
 RUN apt-get update && apt-get install -y libgl1-mesa-glx libpci-dev curl nano psmisc zip git vim iputils-ping
 
 # CONDA
-RUN conda create -n rice python=3 -y
+#RUN conda create -n rice python=3 -y
 #RUN conda activate rice
-RUN echo "conda activate rice" >> ~/.bashrc
-SHELL ["/bin/bash", "--login", "-c"]
+#RUN echo "conda activate rice" >> ~/.bashrc
+#SHELL ["/bin/bash", "--login", "-c"]
 
 RUN conda install -y faiss-gpu scikit-learn pandas flake8 yapf isort yacs gdown future libgcc -c conda-forge
 
