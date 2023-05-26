@@ -10,7 +10,7 @@ RUN conda create -n rice python=3 -y
 RUN echo "conda activate rice" >> ~/.bashrc
 SHELL ["/bin/bash", "--login", "-c"]
 
-RUN conda install -y faiss-gpu scikit-learn pandas flake8 yapf isort==4.3.21 yacs gdown future libgcc -c conda-forge
+RUN conda install -y faiss-gpu scikit-learn pandas flake8 yapf isort yacs gdown future libgcc -c conda-forge
 
 # PIP
 RUN pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
