@@ -1,14 +1,8 @@
 #FROM pytorch/pytorch:1.12.1-cuda11.3-cudnn8-devel
-FROM pytorch/pytorch:1.6.0-cuda10.1-cudnn7-devel
+#FROM pytorch/pytorch:1.6.0-cuda10.1-cudnn7-devel
+FROM rocker/r-ver:4.0.0-cuda10.2-ubuntu18.04
 
 #RUN apt-key del 7fa2af80 && apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub && apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
-# Fix apt-get update error
-apt-key del 7fa2af80
-rm /etc/apt/sources.list.d/cuda.list
-rm /etc/apt/sources.list.d/nvidia-ml.list
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-keyring_1.0-1_all.deb
-dpkg -i cuda-keyring_1.0-1_all.deb
-
 RUN apt-get update 
 RUN apt-get install -y libgl1-mesa-glx 
 RUN apt-get install -y libpci-dev 
